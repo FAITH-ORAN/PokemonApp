@@ -1,0 +1,26 @@
+
+        <div class=" card " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center text-primary">{{pokemon.nom}}</h5>
+                <img class="position-absolute top-10 end-0 translate-middle" width="15%"[src]="pokemon.img" title="pokemons" alt="pokemons" (click)="unClicSurImage(pokemon.nom)"/>
+                <h6 class="card-subtitle mb-2 text-muted">categorie: <span class="text-dark">{{pokemon.categorie}}</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted">type:<span class="text-dark">{{pokemon.type}}</span></h6>
+                <div *ngIf="pokemon.taille ; then siMonIfEstVrai else leElseDeMonIf"></div>
+                   
+                    <ng-template #siMonIfEstVrai> 
+                        <h6 class="card-subtitle mb-2 text-muted">taille:<span class="text-dark">{{pokemon.taille|number}} m</span></h6>
+                    </ng-template> 
+                      <ng-template #leElseDeMonIf> 
+                        <h6 class="card-subtitle mb-2 text-muted">taille:<span class="text-dark">N/A</span></h6>
+                    </ng-template> 
+                    <div *ngIf="pokemon.poids ; then elseIf else el"></div>
+                   
+                    <ng-template #elseIf> 
+                        <h6 class="card-subtitle mb-2 text-muted">poid:<span class="text-dark">{{pokemon.poids|number}} kg</span></h6>
+                    </ng-template> 
+                      <ng-template #el> 
+                        <h6 class="card-subtitle mb-2 text-muted">poid:<span class="text-dark">N/A</span></h6>
+                    </ng-template> 
+                
+            </div>
+        </div>

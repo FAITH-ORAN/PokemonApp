@@ -1,33 +1,11 @@
 <div class="col-lg-12 container">
     <div class="row">
-            <div class="col-lg-12 bg-primary d-flex flex-wrap justify-content-between mt-3 mb-2" >
-                <div class=" mt-3 mb-2" *ngFor="let ElOfPokemon of pokemon">
-                    <div class=" card " style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-primary">{{ElOfPokemon.nom}}</h5>
-                            <img class="position-absolute top-10 end-0 translate-middle" width="15%"[src]="ElOfPokemon.img" title="pokemons" alt="pokemons"/>
-                            <h6 class="card-subtitle mb-2 text-muted">categorie: <span class="text-dark">{{ElOfPokemon.categorie}}</span></h6>
-                            <h6 class="card-subtitle mb-2 text-muted">type:<span class="text-dark">{{ElOfPokemon.type}}</span></h6>
-                            <div *ngIf="ElOfPokemon.taille ; then siMonIfEstVrai else leElseDeMonIf"></div>
-                               
-                                <ng-template #siMonIfEstVrai> 
-                                    <h6 class="card-subtitle mb-2 text-muted">taille:<span class="text-dark">{{ElOfPokemon.taille|number}} m</span></h6>
-                                </ng-template> 
-                                  <ng-template #leElseDeMonIf> 
-                                    <h6 class="card-subtitle mb-2 text-muted">taille:<span class="text-dark">N/A</span></h6>
-                                </ng-template> 
-                                <div *ngIf="ElOfPokemon.poids ; then elseIf else el"></div>
-                               
-                                <ng-template #elseIf> 
-                                    <h6 class="card-subtitle mb-2 text-muted">poid:<span class="text-dark">{{ElOfPokemon.poids|number}} kg</span></h6>
-                                </ng-template> 
-                                  <ng-template #el> 
-                                    <h6 class="card-subtitle mb-2 text-muted">poid:<span class="text-dark">N/A</span></h6>
-                                </ng-template> 
-                            
-                        </div>
-                    </div>
-                </div>
+        <p *ngIf=pokemonSelectionne>Le Pokémon sélectionné 
+            est : {{pokemonSelectionne}}</p> 
+        <div class="col-lg-12 bg-primary d-flex flex-wrap justify-content-between mt-3 mb-2" >
+            <div class=" mt-3 mb-2"  *ngFor="let pokemonEl of pokemons">
+                <app-pokemon [pokemon]="pokemonEl" (unEvenement)="pokemonSelectionne=$event" ></app-pokemon>
+            </div>
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GenerationsComponent } from './composants/generations/generations.component';
 import { PokemonsComponent } from './composants/pokemons/pokemons.component';
 import localeFR from '@angular/common/locales/fr';
+import { PokemonComponent } from './composants/pokemon/pokemon.component';
 
 
 registerLocaleData(localeFR); 
@@ -13,7 +14,8 @@ registerLocaleData(localeFR);
   declarations: [
     AppComponent,
     GenerationsComponent,
-    PokemonsComponent
+    PokemonsComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule

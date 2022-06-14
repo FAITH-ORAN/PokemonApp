@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit {
-  
-  pokemon = [ 
+ pokemonSelectionne!:string;
+ pokemons = [ 
     { 'id': 1, 'nom': 'Bulbizarre', 'img': 'https://i.pinimg.com/originals/1e/ac/20/1eac2022b5bfa7b3fb53e0bf70b7e46b.jpg', 'categorie': 'graine', 'type': ['plante', 
  'poison'], 'taille': 0.70, 'poids': 6.9 }, 
     { 'id': 2, 'nom': 'Herbizarre', 'img': 'https://www.123-stickers.com/7671-thickbox/autocollant-herbizarre-pokemon-002.jpg', 'categorie': 'graine', 'type': ['plante', 
@@ -21,9 +21,13 @@ export class PokemonsComponent implements OnInit {
     { 'id': 6, 'nom': 'Dracaufeu', 'img': 'https://www.g33kmania.com/wp-content/uploads/006_mega-dracaufeu-y.png', 'categorie': 'flamme', 'type': ['feu', 'vol'], 
  'taille': 1.7, 'poids': 90.5 } 
  ]; 
+   
+
   constructor() { }
 
   ngOnInit(): void {
+   
   }
+
 
 }
