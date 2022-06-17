@@ -23,7 +23,18 @@ export class ServPokemonsService {
   getPokemons(){ 
    return this.pokemons;
   }
+
   getNumberOfPokemons(){
    return this.pokemons.length;
   }
+
+  getNameOfPokemons(){ 
+   const arr=this.pokemons.map(x => x.nom)
+   return arr;
+  }
+
+  rechercherPokemon(nomDuPokemon: string) { 
+   let regex = new RegExp(nomDuPokemon, 'gi'); 
+   return this.pokemons.filter(pokemon => pokemon.nom.match(regex)); 
+ } 
 }

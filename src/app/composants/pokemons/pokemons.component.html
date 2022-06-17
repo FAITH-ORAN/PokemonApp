@@ -1,6 +1,23 @@
 <div class="col-lg-12 container">
     <div class="row">
         <p>Le nombre des pokémons est : {{comptePokemon}}</p>
+
+        <form #pokemonsFormulaire="ngForm" (ngSubmit)="auClic(pokemonsFormulaire.value.nomPok)">
+
+            <div>le nom du pokémons saissie est : {{pokemonsFormulaire.value.nomPok|json}}</div>
+            <div>le nom du pokémons saissie dans le modèle est : {{formulairePokemon|json}}</div>
+            <div class="col-lg-12 form-row align-items-center">
+              <div class="col-lg-6"  id="error">
+                <label class="sr-only" for="inlineFormInput">Nom du pokémons</label>
+                <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomPok" placeholder="nom pokemons" [(ngModel)]="formulairePokemon.nomPok">
+              </div>
+              
+                 <div>
+                <button type="submit" class="btn btn-primary mr-2 mb-2">rechercher</button>
+                </div>
+                <button type="reset" (click)="annulerRecherche()"class="btn btn-dark ml-3 mb-2">Annuler</button>
+            </div>
+          </form>
         <p class="mt-3 mx-auto text-center alert alert-primary" role="alert" *ngIf=pokemonSelectionne>Le Pokémon sélectionné 
             est : {{pokemonSelectionne}}</p> 
         <div class="col-lg-12 bg-primary d-flex flex-wrap justify-content-between mt-3 mb-2" >
@@ -10,5 +27,6 @@
         </div>
     </div>
 </div>
+
 
 
