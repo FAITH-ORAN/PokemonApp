@@ -6,11 +6,12 @@
             <div class="col-lg-12 form-row align-items-center">
               <div class="col-lg-6"  id="error">
                 <label class="sr-only" for="inlineFormInput">Nom du pokémons</label>
-                <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomPok" placeholder="nom pokemons" [(ngModel)]="formulairePokemon.nomPok">
+                <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomPok" placeholder="nom pokemons" [(ngModel)]="formulairePokemon.nomPok"  [class.is-invalid]="nomPok.invalid" [class.is-valid]="nomPok.valid" required pattern="[a-zA-Z 3 ]*" #nomPok="ngModel">
+                <small *ngIf="nomPok.invalid" id="condition" class="text-danger"> Le champs ne doit contenir que des lettres.</small> 
               </div>
               
                  <div>
-                <button type="submit" class="btn btn-primary mr-2 mb-2">rechercher</button>
+                <button type="submit" class="btn btn-primary mr-2 mb-2" [disabled]="pokemonsFormulaire.invalid">rechercher</button>
                 </div>
                 <button type="reset" (click)="annulerRecherche()"class="btn btn-dark ml-3 mb-2">Annuler</button>
             </div>

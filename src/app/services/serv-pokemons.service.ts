@@ -18,10 +18,14 @@ export class ServPokemonsService {
     { 'id': 6, 'nom': 'Dracaufeu', 'img': 'https://www.g33kmania.com/wp-content/uploads/006_mega-dracaufeu-y.png', 'categorie': 'flamme', 'type': ['feu', 'vol'], 
  'taille': 1.7, 'poids': 90.5 } 
  ]; 
+
   constructor() { }
 
   getPokemons(){ 
    return this.pokemons;
+  }
+  getEgg(){ 
+  return null;
   }
 
   getNumberOfPokemons(){
