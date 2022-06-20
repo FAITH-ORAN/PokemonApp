@@ -40,6 +40,7 @@ export class PokemonsComponent implements OnInit {
          this.pokemons=this.dependency.getEgg()
          const img = document.createElement("img");
           img.setAttribute('src', 'http://media.giphy.com/media/3o7bu1nVSxNQUWMAZa/source.gif');
+          img.setAttribute("id","imgEgg")
           document.body.appendChild(img);
           console.log("C3PO")
           console.log(img)
@@ -59,6 +60,11 @@ export class PokemonsComponent implements OnInit {
   annulerRecherche(){
     this.pokemons=this.dependency.getPokemons();
     this.formulairePokemon.setNom("");
+    const img=document.getElementById("imgEgg")
+    if (img){
+      img.remove();
+    }
+    
   }
 
 insertAfter(referenceNode:any, newNode:any) {
