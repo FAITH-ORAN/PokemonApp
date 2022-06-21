@@ -60,6 +60,10 @@ export class PokemonsComponent implements OnInit {
   annulerRecherche(){
     this.pokemons=this.dependency.getPokemons();
     this.formulairePokemon.setNom("");
+    const divAlert=document.getElementById("alertDiv");
+    if(divAlert){
+      divAlert.remove();
+    }
     const img=document.getElementById("imgEgg")
     if (img){
       img.remove();
